@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #0b0f19;
+    color: #e5e7eb;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: #020617;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #cbd5f5;
+    text-decoration: none;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 120px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+  }
+  
+  .buttons a {
+    margin: 10px;
+    padding: 12px 24px;
+    background: #2563eb;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .card {
+    background: #111827;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+  }
+  
+  .skills span {
+    display: inline-block;
+    margin: 8px;
+    padding: 8px 12px;
+    background: #1f2937;
+    border-radius: 6px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #020617;
+  }
