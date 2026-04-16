@@ -1,614 +1,1246 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- ============================================================
+     HEAD SECTION
+     Contains all metadata, SEO tags (Open Graph, Twitter Card),
+     font imports, favicon, stylesheet, and image preloads.
+     This is loaded before the page renders.
+     ============================================================ -->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shivam Gupta - Software Development Engineer at AWS. Portfolio and resume.">
+  <meta property="og:title" content="Shivam Gupta - Software Development Engineer at AWS">
+  <meta property="og:description" content="Portfolio of Shivam Gupta — SDE at Amazon Web Services. Distributed systems, cloud-native apps, and AI-driven platforms.">
+  <meta property="og:image" content="assets/profile.jpeg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Shivam Gupta - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%232563eb'/><text x='50' y='68' font-size='50' font-family='Inter,sans-serif' font-weight='700' fill='white' text-anchor='middle'>SG</text></svg>">
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="assets/profile.jpeg" as="image">
 </head>
-
 <body>
 
+<!-- ============================================================
+     NAVIGATION BAR
+     Fixed top nav with site title, hamburger menu for mobile,
+     nav links to each section, a "More" dropdown for overflow
+     items, and a dark/light theme toggle button.
+     ============================================================ -->
 <nav>
   <div><strong>Shivam Gupta</strong></div>
+  <button class="hamburger" aria-label="Toggle menu">☰</button>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li class="nav-more">
+      <span class="more-dots">More ▾</span>
+      <ul class="nav-dropdown">
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#activities">Leadership</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#personal">Personal</a></li>
+      </ul>
+    </li>
   </ul>
+  <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
 </nav>
 
-<!-- HERO -->
+<main>
+
+<!-- ============================================================
+     HERO SECTION
+     The first thing visitors see. Contains the name, job title,
+     contact info, social links, a profile photo, and a scroll
+     hint. Uses the "reveal" class for scroll-triggered animation.
+     ============================================================ -->
+<!-- TEMPLATE: To update the hero, edit the fields below directly.
 <section class="hero reveal">
-
   <div class="hero-container">
-
     <div class="hero-text">
-      <h1 class="name">SHIVAM GUPTA</h1>
-      <h2 class="role">Software Development Engineer at Amazon Web Services</h2>
-
+      <h1 class="name">YOUR NAME</h1>
+      <h2 class="role">Your Job Title at Company</h2>
       <p class="contact">
-        📞 +1-(352)575-5945 <br>
-        ✉️ shivamguptasml@gmail.com <br>
-        📍 Seattle, Washington, USA <br><br>
-
-        <a class="icon-link" href="https://linkedin.com/in/shivam-gupta07" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg">
+        📞 +1-(XXX)XXX-XXXX <br>
+        ✉️ your.email@example.com <br>
+        📍 City, State, Country <br><br>
+        <a class="icon-link" href="https://linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
           LinkedIn
         </a>
-
         |
-
-        <a class="icon-link" href="https://github.com/shivamgupta-7" target="_blank">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+        <a class="icon-link" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
           GitHub
         </a>
       </p>
     </div>
-
     <div class="hero-image">
-      <img src="assets/profile.jpeg" alt="Profile">
+      <img src="assets/your-photo.jpeg" alt="Your Name profile photo">
     </div>
+  </div>
+</section>
+-->
+<!-- HERO -->
+<section class="hero reveal">
+  <div class="hero-container">
+    <div class="hero-text">
+      <h1 class="name">SHIVAM GUPTA</h1>
+      <h2 class="role">Software Development Engineer at Amazon Web Services</h2>
+      <p class="contact">
+        📞 +1-(352)575-5945 <br>
+        ✉️ shivamguptasml@gmail.com <br>
+        📍 Seattle, Washington, USA <br><br>
+        <a class="icon-link" href="https://linkedin.com/in/shivam-gupta07" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+          LinkedIn
+        </a>
+        |
+        <a class="icon-link" href="https://github.com/shivamgupta-7" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+          GitHub
+        </a>
+        |
+        <a class="icon-link" href="https://drive.google.com/file/d/1bd6R-mMe_f5_ZoEWve8fnyRqufx1d2HV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+          📄 1-Page Resume
+        </a>
+      </p>
+    </div>
+    <div class="hero-image">
+      <img src="assets/profile.jpeg" alt="Shivam Gupta profile photo">
+    </div>
+  </div>
+  <div class="scroll-hint">↓ Scroll to explore</div>
+</section>
 
+<!-- ============================================================
+     ABOUT ME SECTION
+     A brief personal summary / elevator pitch. Wrapped in a
+     single .card div. Describes professional focus areas and
+     what drives the person.
+     ============================================================ -->
+<!-- TEMPLATE: To change the about text, replace the <p> contents.
+<section id="about" class="reveal">
+  <h2>ABOUT ME</h2>
+  <div class="card">
+    <p>Your first paragraph — who you are and what you do.</p>
+    <p>Your second paragraph — what you care about and your focus areas.</p>
+  </div>
+</section>
+-->
+<!-- ABOUT ME -->
+<section id="about" class="reveal">
+  <h2>ABOUT ME</h2>
+  <div class="card">
+    <p>
+      I build systems that scale. From designing GA features at AWS to deploying AI pipelines
+      in healthcare, I'm drawn to problems where distributed systems meet real-world impact.
+    </p>
+    <p>
+      My work spans cloud infrastructure, backend architecture, and applied machine learning
+      across healthcare and finance. I care about clean design, operational excellence,
+      and shipping code that matters.
+    </p>
   </div>
 </section>
 
-<!-- ================= ABOUT ME ================= -->
-<section id="about" class="reveal">
+<!-- ============================================================
+     EXPERIENCE SECTION
+     Work history displayed as a vertical timeline. Each job is a
+     .timeline-item with a dot, a card, company logo, title, date,
+     location, and bullet-point contributions.
 
-    <h2>ABOUT ME</h2>
-  
-    <div class="card">
-  
-      <p>
-        I am a Software Development Engineer with experience in building scalable distributed systems,
-        cloud-native applications, and AI-driven platforms. I specialize in backend engineering,
-        system design, and performance optimization across large-scale infrastructures.
-      </p>
-  
-      <p>
-        My work spans AWS cloud services, enterprise backend systems, and applied machine learning
-        systems in healthcare and finance domains. I enjoy solving complex engineering problems
-        with clean, scalable architecture.
-      </p>
-  
+     The FIRST item uses a plain .timeline-card.highlight (always
+     visible). Subsequent items use <details> so they are collapsed
+     by default. Older roles are wrapped in a "Show more" <details>
+     toggle (#exp-more).
+     ============================================================ -->
+<!-- TEMPLATE: To add a new work experience entry, copy the block
+     below and paste it inside <div class="timeline elite"> before
+     or after existing .timeline-item blocks.
+
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <details class="timeline-card">
+    <summary class="exp-summary">
+      <div class="summary-left">
+        <div class="company-name-row">
+          <img class="company-logo" src="assets/COMPANY_LOGO.jpeg" alt="Company Name logo">
+          <h3>Company Name</h3>
+        </div>
+        <span class="badge">Your Job Title</span>
+        <div class="hint">Click to expand</div>
+      </div>
+      <div class="summary-right">
+        <div class="time-box">Start Date – End Date</div>
+        <div class="location-box">City, State, Country</div>
+      </div>
+    </summary>
+    <div class="exp-body">
+      <h4>Key Contributions</h4>
+      <ul>
+        <li>Bullet point describing accomplishment #1.</li>
+        <li>Bullet point describing accomplishment #2.</li>
+      </ul>
     </div>
-  
-  </section>
-
+  </details>
+</div>
+-->
+<!-- EXPERIENCE -->
 <section id="experience" class="reveal">
   <h2>WORK EXPERIENCE</h2>
-
   <div class="timeline elite">
 
-    <!-- AWS (EXPANDED DEFAULT) -->
+    <!-- AWS (expanded by default) -->
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-
       <div class="timeline-card highlight">
-
         <div class="card-top">
-
           <div class="top-left">
-            <h3>AWS (Amazon Web Services)</h3>
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/aws.jpeg" alt="AWS logo">
+              <h3>AWS (Amazon Web Services)</h3>
+            </div>
             <span class="badge">Software Development Engineer</span>
             <div class="hint">Currently Active Role</div>
           </div>
-
           <div class="meta-box">
             <div class="time-box">Dec 2024 – Present</div>
-            <div class="location-box">Seattle, Washington, United States of America</div>
+            <div class="location-box">Seattle, WA, USA</div>
           </div>
-
         </div>
-
         <div class="exp-section">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Designed and implemented a GA feature for AWS Backup and S3 data protection, enabling optional backup of access control lists and object tags and reducing customer costs by 10%.</li>
-
+            <li>Designed and implemented a GA feature for AWS Backup and S3 data protection, enabling optional backup of access control lists and object tags, reducing customer costs by 10%.</li>
             <li>Led end-to-end system design and implementation of a cross-region, customer-facing error classification system for S3 backup and restore failures, enabling self-service remediation and reducing operational support load.</li>
-
             <li>Developed a scalable EC2 fleet management onboarding system supporting automated OS patching, instance right-sizing, and compliance enforcement across a globally distributed, high-availability infrastructure.</li>
           </ul>
         </div>
-
       </div>
     </div>
 
-    <!-- COLLAPSIBLE ROLE TEMPLATE -->
-    <details class="timeline-item timeline-card">
-
-      <summary class="exp-summary">
-
-        <div class="summary-left">
-          <h3>Barclays International Investment Bank</h3>
-          <span class="badge">Software Developer</span>
-          <div class="hint">Click to expand</div>
+    <!-- Barclays -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/barclays.jpeg" alt="Barclays logo">
+              <h3>Barclays International Investment Bank</h3>
+            </div>
+            <span class="badge">Software Developer</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Jul 2024 – Dec 2024</div>
+            <div class="location-box">New York, NY, USA</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Deployed a distributed, cloud-native multi-tier application architecture on OpenStack using Ansible automation and Maven-based CI/CD pipelines, improving deployment scalability and delivery efficiency by 20%.</li>
+            <li>Designed enterprise batch scheduling workflows using Autosys (JIL), optimizing job orchestration and reducing execution latency by 15% in production systems.</li>
+            <li>Developed a scalable distributed multi-user backend platform using Erlang and MySQL, implementing concurrent service orchestration for enterprise-grade multi-user applications.</li>
+          </ul>
         </div>
+      </details>
+    </div>
 
-        <div class="summary-right">
-          <div class="time-box">Jul 2024 – Dec 2024</div>
-          <div class="location-box">New York, New York, United States of America</div>
+    <!-- University of Florida -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/ufmedicine.jpeg" alt="University of Florida logo">
+              <h3>University of Florida – College of Medicine</h3>
+            </div>
+            <span class="badge">AI Application Developer</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Aug 2023 – Jul 2024</div>
+            <div class="location-box">Gainesville, FL, USA</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Designed a graph-based data processing system using MemGraph for healthcare analytics, enabling efficient querying and visualization of large-scale relational datasets and improving system performance by 56%.</li>
+            <li>Built and deployed secure, cloud-integrated AI systems for healthcare (PHI-compliant) on GPU-accelerated infrastructure, supporting production-level machine learning workflows and improving operational efficiency by 38%.</li>
+            <li>Developed a distributed backend application using object-oriented programming, integrating MS-SQL Server, XML, and networking protocols, improving user engagement by 18%.</li>
+          </ul>
         </div>
+      </details>
+    </div>
 
-      </summary>
+    <details class="show-more-toggle" id="exp-more">
+      <summary class="show-more-btn" aria-label="Show more items">Show more ▾</summary>
 
-      <div class="exp-body">
-        <h4>Key Contributions</h4>
-        <ul>
-          <li>Deployed a distributed, cloud-native multi-tier application architecture on OpenStack using Ansible automation and Maven-based CI/CD pipelines, improving deployment scalability and delivery efficiency by 20%.</li>
-          <li>Designed enterprise batch scheduling workflows using Autosys (JIL), optimizing job orchestration and reducing execution latency by 15% in production systems.</li>
-          <li>Developed a scalable distributed multi-user backend platform using Erlang and MySQL, implementing concurrent service orchestration for enterprise-grade multi-user applications.</li>
-        </ul>
-      </div>
-
-    </details>
-
-    <!-- UNIVERSITY OF FLORIDA -->
-    <details class="timeline-item timeline-card">
-
-      <summary class="exp-summary">
-
-        <div class="summary-left">
-          <h3>University of Florida – College of Medicine</h3>
-          <span class="badge">AI Application Developer</span>
-          <div class="hint">Click to expand</div>
+    <!-- University of Florida – Graduate Positions -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/uf.jpeg" alt="University of Florida logo">
+              <h3>University of Florida</h3>
+            </div>
+            <span class="badge">Graduate Research & Teaching</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Jan 2023 – Jun 2023</div>
+            <div class="location-box">Gainesville, FL, USA</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Software Engineer Intern <span class="badge">May 2023 – Jun 2023</span></h4>
+          <ul>
+            <li>Summer Intern (Student Assistant) at the Office of AI Application and Innovation. Developed an operational graphical model using MemGraph to sort through subgraphs with a filtered approach to graph AI for complex patient data.</li>
+            <li>The AI Labs for Patient Safety link PHI to GPU-accelerated, high-performance computing infrastructure within a secure enclave, extending research-level AI models to operational datasets.</li>
+          </ul>
+          <h4>Graduate Research Assistant <span class="badge">Feb 2023 – Jun 2023</span></h4>
+          <ul>
+            <li>Graduate Research Assistant at Magnetoencephalography (MEG) Lab, The Norman Fixel Institute of Neurological Diseases at UF Health with Abbas Babajani-Feremi, PhD.</li>
+            <li>Research and analysis on complex NACC health data for the Alzheimer's dataset with data from over 15,000 patients collected over 25 years to identify complex patterns using different machine learning models.</li>
+          </ul>
+          <h4>Graduate Teaching Assistant <span class="badge">Jan 2023 – May 2023</span></h4>
+          <ul>
+            <li>Graduate Teaching Assistant for the Human-Computer Interaction Course with Pedro Guillermo Feijóo-García, Ph.D. at the Department of Computer and Information Science, Herbert Wertheim College of Engineering.</li>
+            <li>Mentored 120 students through the complexities of Human-Computer Interaction and User Experience Design along with grading assignments and projects.</li>
+          </ul>
         </div>
+      </details>
+    </div>
 
-        <div class="summary-right">
-          <div class="time-box">August 2023 – July 2024</div>
-          <div class="location-box">Gainesville, Florida, United States of America</div>
+    <!-- Barclays Intern -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/barclays.jpeg" alt="Barclays logo">
+              <h3>Barclays International Investment Bank</h3>
+            </div>
+            <span class="badge">Developer Analyst Intern</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Jun 2023 – Aug 2023</div>
+            <div class="location-box">Whippany, NJ, USA</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Built REST APIs using Java & Spring Boot with Mockito testing, improving API performance by 20%.</li>
+            <li>Enhanced distributed system observability using OpenTelemetry, Prometheus, and Micrometer, improving latency tracking and reducing response time by 23%.</li>
+          </ul>
         </div>
-
-      </summary>
-
-      <div class="exp-body">
-        <h4>Key Contributions</h4>
-        <ul>
-          <li>Designed a graph-based data processing system using MemGraph for healthcare analytics, enabling efficient querying and visualization of large-scale relational datasets and improving system performance by 56%.</li>
-
-          <li>Built and deployed secure, cloud-integrated AI systems for healthcare (PHI-compliant) on GPU-accelerated infrastructure, supporting production-level machine learning workflows and improving operational efficiency by 38%.</li>
-
-          <li>Developed a distributed backend application using object-oriented programming, integrating MS-SQL Server, XML, and networking protocols, improving user engagement by 18%.</li>
-        </ul>
-      </div>
-
-    </details>
-
-    <!-- BARCLAYS INTERN -->
-    <details class="timeline-item timeline-card">
-
-      <summary class="exp-summary">
-
-        <div class="summary-left">
-          <h3>Barclays International Investment Bank</h3>
-          <span class="badge">Developer Analyst Intern</span>
-          <div class="hint">Click to expand</div>
-        </div>
-
-        <div class="summary-right">
-          <div class="time-box">June 2023 – August 2023</div>
-          <div class="location-box">Whippany, New Jersey, United States of America</div>
-        </div>
-
-      </summary>
-
-      <div class="exp-body">
-        <h4>Key Contributions</h4>
-        <ul>
-          <li>Built REST APIs using Java & Spring Boot with Mockito testing improving API performance by 20%.</li>
-          <li>Enhanced distributed system observability using OpenTelemetry, Prometheus, and Micrometer, improving latency tracking and reducing response time by 23%.</li>
-        </ul>
-      </div>
-
-    </details>
+      </details>
+    </div>
 
     <!-- NIC -->
-    <details class="timeline-item timeline-card">
-
-      <summary class="exp-summary">
-
-        <div class="summary-left">
-          <h3>National Informatics Centre</h3>
-          <span class="badge">Software Developer</span>
-          <div class="hint">Click to expand</div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/nic.jpeg" alt="NIC logo">
+              <h3>National Informatics Centre</h3>
+            </div>
+            <span class="badge">Software Developer</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Jul 2021 – Sep 2021</div>
+            <div class="location-box">Shimla, HP, IN</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Modernized a COVID-19 web application using .NET, Azure, and JavaScript, reducing debugging time by 23%.</li>
+            <li>Designed a U-Convolutional Neural Network for change prediction, achieving 97% accuracy on remote sensing data.</li>
+          </ul>
         </div>
+      </details>
+    </div>
 
-        <div class="summary-right">
-          <div class="time-box">July 2021 – September 2021</div>
-          <div class="location-box">Shimla, Himachal Pradesh, India</div>
+    <!-- IIT Mandi -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <details class="timeline-card">
+        <summary class="exp-summary">
+          <div class="summary-left">
+            <div class="company-name-row">
+              <img class="company-logo" src="assets/iitmandi.jpeg" alt="IIT Mandi logo">
+              <h3>Indian Institute of Technology, Mandi</h3>
+            </div>
+            <span class="badge">ML & Data Science Analyst</span>
+            <div class="hint">Click to expand</div>
+          </div>
+          <div class="summary-right">
+            <div class="time-box">Dec 2019 – Jan 2021</div>
+            <div class="location-box">Mandi, HP, IN</div>
+          </div>
+        </summary>
+        <div class="exp-body">
+          <h4>Key Contributions</h4>
+          <ul>
+            <li>Built a real-time facial recognition system using Python, OpenCV, and NumPy, enabling efficient feature extraction and identity matching (82% accuracy).</li>
+            <li>Integrated a chatbot with natural language processing for user support, boosting user experience by 24%.</li>
+          </ul>
         </div>
-
-      </summary>
-
-      <div class="exp-body">
-        <h4>Key Contributions</h4>
-        <ul>
-          <li>Modernized a COVID-19 web application using .NET, Azure, and JavaScript, reducing debugging time by 23%.</li>
-          <li>Designed a U-Convolutional Neural Network for change prediction, achieving 97% accuracy on remote sensing data.</li>
-        </ul>
-      </div>
-
-    </details>
-
-    <!-- IIT MANDI -->
-    <details class="timeline-item timeline-card">
-
-      <summary class="exp-summary">
-
-        <div class="summary-left">
-          <h3>Indian Institute of Technology, Mandi</h3>
-          <span class="badge">ML & Data Science Analyst</span>
-          <div class="hint">Click to expand</div>
-        </div>
-
-        <div class="summary-right">
-          <div class="time-box">December 2019 – January 2021</div>
-          <div class="location-box">Mandi, Himachal Pradesh, India</div>
-        </div>
-
-      </summary>
-
-      <div class="exp-body">
-        <h4>Key Contributions</h4>
-        <ul>
-          <li>Built a real-time facial recognition system using Python, OpenCV, and NumPy, enabling efficient feature extraction and identity matching (82% accuracy).</li>
-          <li>Integrated a chatbot with natural language processing for consumer support to boost user experience by 24%.</li>
-        </ul>
-      </div>
+      </details>
+    </div>
 
     </details>
 
   </div>
 </section>
 
+<!-- ============================================================
+     SKILLS SECTION
+     Organized into a grid of skill cards, each representing a
+     category (Languages, Frameworks, Databases, etc.). Each card
+     contains .skill-tags with an icon + label per skill.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new skill category card, copy this block
+     and place it inside <div class="skills-grid">.
+
+<div class="skills-card">
+  <h4>Category Name</h4>
+  <div class="skill-tags">
+    <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ICON_NAME/ICON_NAME-original.svg" alt="Skill Name">Skill Name</span>
+  </div>
+</div>
+-->
+<!-- TEMPLATE: To add a new skill tag inside an existing card,
+     copy this <span> and place it inside the relevant .skill-tags div.
+
+<span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ICON_NAME/ICON_NAME-original.svg" alt="Skill Name">Skill Name</span>
+-->
+<!-- SKILLS -->
 <section id="skills" class="reveal">
-    <h2>SKILLS</h2>
-  
-    <div class="skills-grid">
-  
-      <div class="skills-card">
-        <h4>Frontend</h4>
-        <div class="skill-group">
-          <span class="skill">🌐 HTML5</span>
-          <span class="skill">🎨 CSS3</span>
-          <span class="skill">⚡ JavaScript</span>
-          <span class="skill">⚛️ React.js</span>
-          <span class="skill">🅰️ Angular.js</span>
-        </div>
+  <h2>SKILLS</h2>
+  <div class="skills-grid">
+    <div class="skills-card">
+      <h4>Languages</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">Java</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">Python</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">JavaScript</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript">TypeScript</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">C++</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">C#</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">Swift</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">R</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go">Golang</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg" alt="Erlang">Erlang</span>
       </div>
-  
-      <div class="skills-card">
-        <h4>Backend</h4>
-        <div class="skill-group">
-          <span class="skill">☕ Java</span>
-          <span class="skill">🐍 Python</span>
-          <span class="skill">⚙️ C++</span>
-          <span class="skill">#️⃣ C#</span>
-          <span class="skill">🟢 Node.js</span>
-          <span class="skill">📘 TypeScript</span>
-          <span class="skill">🌱 Spring Boot</span>
-          <span class="skill">📦 Maven</span>
-          <span class="skill">🔗 Microservices</span>
-          <span class="skill">🍎 Swift</span>
-          <span class="skill">🪟 ASP.NET</span>
-        </div>
-      </div>
-  
-      <div class="skills-card">
-        <h4>Database & Machine Learning</h4>
-        <div class="skill-group">
-          <span class="skill">🗄️ MySQL</span>
-          <span class="skill">🗃️ SQL Server</span>
-          <span class="skill">🟡 Oracle</span>
-          <span class="skill">📊 R</span>
-          <span class="skill">🧠 TensorFlow</span>
-        </div>
-      </div>
-  
-      <div class="skills-card">
-        <h4>Tools and Technologies</h4>
-        <div class="skill-group">
-          <span class="skill">🐙 Git</span>
-          <span class="skill">🐳 Docker</span>
-          <span class="skill">☁️ AWS</span>
-          <span class="skill">☁️ Google Cloud</span>
-          <span class="skill">☁️ Azure</span>
-          <span class="skill">🔁 CI/CD</span>
-          <span class="skill">🐧 Linux</span>
-          <span class="skill">🎯 ServiceNow</span>
-          <span class="skill">📋 JIRA</span>
-          <span class="skill">🧩 Agile</span>
-          <span class="skill">⚙️ Jenkins</span>
-          <span class="skill">📮 Postman</span>
-        </div>
-      </div>
-  
     </div>
-  </section>
-
-  <section id="education" class="reveal">
-    <h2>EDUCATION</h2>
-  
-    <div class="timeline elite">
-  
-      <!-- UNIVERSITY OF FLORIDA -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-  
-        <div class="timeline-card highlight">
-  
-          <h3>University of Florida, Gainesville</h3>
-  
-          <span class="badge">Master’s Degree</span>
-  
-          <p class="edu-title">
-            Master of Science in Computer Science
-          </p>
-  
-          <div class="edu-meta">
-            <div><strong>GPA:</strong> 3.83 / 4.0</div>
-            <div><strong>Duration:</strong> Aug 2022 – Dec 2023</div>
-          </div>
-  
-          <ul>
-            <li>Herbert Wertheim College of Engineering Achievement Award Scholarship Recipient</li>
-            <li>Senior Certificate Program (Jan 2022 – May 2022)</li>
-          </ul>
-  
-        </div>
+    <div class="skills-card">
+      <h4>Frameworks & Libraries</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">React.js</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular">Angular.js</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">Node.js</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">Spring Boot</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET">ASP.NET</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">TensorFlow</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" alt="GraphQL">GraphQL</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" alt="Prometheus">Prometheus</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">Grafana</span>
       </div>
-  
-      <!-- SRM -->
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-  
-        <div class="timeline-card">
-  
-          <h3>SRM Institute of Science and Technology, India</h3>
-  
-          <span class="badge">Bachelor’s Degree</span>
-  
-          <p class="edu-title">
-            Bachelor of Technology in Computer Science & Engineering
-          </p>
-  
-          <div class="edu-meta">
-            <div><strong>CGPA:</strong> 9.73 / 10</div>
-            <div><strong>Duration:</strong> Jun 2018 – May 2022</div>
-          </div>
-  
-          <ul>
-            <li>SRM ACM (SIG – AI), HackerEarth Associate Lead, Salesforce Technical Team Lead</li>
-            <li>IEEE Member, Indian Science Congress Association</li>
-          </ul>
-  
-        </div>
-      </div>
-  
     </div>
-  </section>
+    <div class="skills-card">
+      <h4>Databases</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">MySQL</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">SQL Server</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" alt="Oracle">Oracle</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">PostgreSQL</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dynamodb/dynamodb-original.svg" alt="DynamoDB">DynamoDB</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis">Redis</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h4>Cloud Platforms</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS">AWS</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">Google Cloud</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">Azure</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" alt="Terraform">Terraform</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/amazoncloudwatch.svg" alt="CloudFormation">CloudFormation</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h4>DevOps & Infrastructure</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">Git</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">Docker</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" alt="Jenkins">Jenkins</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">Linux</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Maven">Maven</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes">Kubernetes</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka">Kafka</span>
+      </div>
+    </div>
+    <div class="skills-card">
+      <h4>Web & Frontend</h4>
+      <div class="skill-tags">
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">HTML5</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">CSS3</span>
+        <span class="skill"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="Postman">Postman</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ================= PROJECTS (CLEAN ELITE MODE) ================= -->
+<!-- ============================================================
+     EDUCATION SECTION
+     Displays degrees in a vertical timeline (same layout as
+     experience). Each entry has a school logo, degree name, GPA,
+     duration, and notable achievements. Older entries and test
+     scores are hidden behind a "Show more" toggle.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new education entry, copy this block and
+     place it inside <div class="timeline elite">.
+
+<div class="timeline-item">
+  <div class="timeline-dot"></div>
+  <div class="timeline-card">
+    <div class="edu-header">
+      <img class="edu-logo" src="assets/SCHOOL_LOGO.jpeg" alt="School Name logo">
+      <div>
+        <h3>School / University Name</h3>
+        <span class="badge">Degree Type</span>
+      </div>
+    </div>
+    <p class="edu-title">Full Degree Title</p>
+    <div class="edu-meta">
+      <div><strong>GPA:</strong> X.XX / 4.0</div>
+      <div><strong>Duration:</strong> Start – End</div>
+    </div>
+    <ul>
+      <li>Notable achievement or activity.</li>
+    </ul>
+  </div>
+</div>
+-->
+<!-- EDUCATION -->
+<section id="education" class="reveal">
+  <h2>EDUCATION</h2>
+  <div class="timeline elite">
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card highlight">
+        <div class="edu-header">
+          <img class="edu-logo" src="assets/uf.jpeg" alt="University of Florida logo">
+          <div>
+            <h3>University of Florida, Gainesville</h3>
+            <span class="badge">Master's Degree</span>
+          </div>
+        </div>
+        <p class="edu-title">Master of Science in Computer Science</p>
+        <div class="edu-meta">
+          <div><strong>GPA:</strong> 3.83 / 4.0</div>
+          <div><strong>Duration:</strong> Aug 2022 – Dec 2023</div>
+        </div>
+        <ul>
+          <li>Herbert Wertheim College of Engineering Achievement Award Scholarship Recipient</li>
+          <li>Senior Certificate Program (Jan 2022 – May 2022)</li>
+        </ul>
+      </div>
+    </div>
+
+    <details class="show-more-toggle" id="edu-more">
+      <summary class="show-more-btn" aria-label="Show more items">Show more ▾</summary>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="edu-header">
+          <img class="edu-logo" src="assets/srm.jpeg" alt="SRM logo">
+          <div>
+            <h3>SRM Institute of Science and Technology, India</h3>
+            <span class="badge">Bachelor's Degree</span>
+          </div>
+        </div>
+        <p class="edu-title">Bachelor of Technology in Computer Science & Engineering</p>
+        <div class="edu-meta">
+          <div><strong>CGPA:</strong> 9.73 / 10</div>
+          <div><strong>Duration:</strong> Jun 2018 – May 2022</div>
+        </div>
+        <ul>
+          <li>SRM ACM (SIG – AI), HackerEarth Associate Lead, Salesforce Technical Team Lead</li>
+          <li>IEEE Member, Indian Science Congress Association</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="edu-header">
+          <img class="edu-logo" src="assets/stedwards.jpeg" alt="St. Edward's logo">
+          <div>
+            <h3>St. Edward's School</h3>
+            <span class="badge">High School – CBSE</span>
+          </div>
+        </div>
+        <p class="edu-title">XII, Non-Medical (PCM)</p>
+        <div class="edu-meta">
+          <div><strong>Class XII:</strong> 89%</div>
+          <div><strong>Class X CGPA:</strong> 10 / 10</div>
+          <div><strong>Duration:</strong> 2004 – 2018</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin:20px 0 10px;color:var(--accent-light);font-size:1rem;">Standardized Test Scores</h3>
+    <div class="scores-row">
+      <div class="score-card">
+        <h4>GRE</h4>
+        <div class="score-value">321 / 340</div>
+        <div class="score-detail">Quant: 165 · Verbal: 156 · AWA: 4.5</div>
+      </div>
+      <div class="score-card">
+        <h4>TOEFL iBT</h4>
+        <div class="score-value">117 / 120</div>
+        <div class="score-detail">R: 28 · L: 30 · S: 29 · W: 30</div>
+      </div>
+    </div>
+
+    </details>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS SECTION
+     A responsive grid of project tiles. Each tile has a
+     background image, an overlay with the title, tech stack tags,
+     bullet-point details, and an optional GitHub link. The overlay
+     appears on hover/focus.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new project tile, copy this block and
+     place it inside <div class="project-grid">.
+
+<div class="project-tile">
+  <img src="assets/PROJECT_IMAGE.jpeg" alt="Project Name" loading="lazy">
+  <div class="tile-overlay">
+    <h4>Project Title</h4>
+    <div class="tech-stack"><span>Tech1</span><span>Tech2</span><span>Tech3</span></div>
+    <div class="tile-details">
+      <ul>
+        <li>Key accomplishment or feature #1.</li>
+        <li>Key accomplishment or feature #2.</li>
+      </ul>
+      <a class="tile-link" href="https://github.com/YOUR-USERNAME/REPO" target="_blank" rel="noopener noreferrer">GitHub →</a>
+    </div>
+  </div>
+</div>
+-->
 <section id="projects" class="reveal">
+  <h2>PROJECTS</h2>
+  <div class="project-grid">
 
-    <h2>PROJECTS</h2>
+    <div class="project-tile">
+      <img src="assets/privacypreserving.jpeg" alt="Privacy Preserving ROS" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Privacy Preserving Autonomous Operations for ROS</h4>
+        <div class="tech-stack"><span>Python</span><span>ROS</span><span>SMC</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Developed SMC pipeline for ROS, reducing overhead by 15%.</li>
+            <li>Encrypted multi-party computation increasing efficiency by 21%.</li>
+            <li>17% better efficiency vs Data Distribution Service (DDS).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    <!-- ================= PROJECT: ROS PRIVACY ================= -->
+    <div class="project-tile">
+      <img src="assets/unet.jpeg" alt="U-Net CNN" loading="lazy">
+      <div class="tile-overlay">
+        <h4>U-Net CNN for Forest Cover Change Prediction</h4>
+        <div class="tech-stack"><span>Python</span><span>TensorFlow</span><span>U-Net</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Forest cover change prediction with 88% accuracy. Winner of SRM Project Expo 2022.</li>
+            <li>ML strategies for change detection using remote sensing data.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/Land-Cover-Detection" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/twitter.jpeg" alt="Twitter Clone" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Twitter Clone (Distributed Erlang)</h4>
+        <div class="tech-stack"><span>Erlang</span><span>WebSocket</span><span>Cowboy</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Full Twitter engine: registration, tweets, hashtags, mentions, re-tweets.</li>
+            <li>Real-time WebSocket delivery with public key authentication.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/DOSP-Twitter-Clone" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/sahayak.jpeg" alt="Sahayak" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Sahayak Student Solutions</h4>
+        <div class="tech-stack"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Platform for international students: accommodation, courses, peer communication.</li>
+            <li>Addressed pain points for 63% of students struggling with housing.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/Sahayak-Student-" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/stay.jpeg" alt="Stay.in" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Stay.in (Web + Mobile Platform)</h4>
+        <div class="tech-stack"><span>React</span><span>Golang</span><span>Flutter</span><span>Node.js</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Web & Android apps for student accommodations and course reviews.</li>
+            <li>Full-stack with React, Golang, Flutter, and unit-tested APIs.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/RajdevKapoor/Stay.in" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/firstlineofdefense.jpeg" alt="FLoD" loading="lazy">
+      <div class="tile-overlay">
+        <h4>FLoD: Adversarial Robustness in ML</h4>
+        <div class="tech-stack"><span>Python</span><span>PyTorch</span><span>CIFAR</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Defense mechanism against membership inference and adversarial attacks.</li>
+            <li>Trained on CIFAR-10, CIFAR-100, and Fashion MNIST.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/bitcoin.jpeg" alt="Bitcoin Miner" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Bitcoin Miner (Distributed Erlang)</h4>
+        <div class="tech-stack"><span>Erlang</span><span>SHA-256</span><span>Actor Model</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Distributed mining with Actor-based concurrency.</li>
+            <li>Parallelized SHA-256 across multiple machines.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/DOSP-Bitcoin-Miner" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/chordpeertopeer.jpeg" alt="Chord P2P" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Chord Peer-to-Peer System</h4>
+        <div class="tech-stack"><span>Erlang</span><span>DHT</span><span>P2P</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Chord DHT protocol for decentralized key-value routing.</li>
+            <li>Scalable key mapping and lookup system.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/CHORD-P2P-SYSTEM-AND-SIMULATION" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-tile">
+      <img src="assets/gossip.jpeg" alt="Gossip Algorithms" loading="lazy">
+      <div class="tile-overlay">
+        <h4>Gossip Algorithms in Distributed Systems</h4>
+        <div class="tech-stack"><span>Erlang</span><span>Actor Model</span><span>Distributed Systems</span></div>
+        <div class="tile-details">
+          <ul>
+            <li>Gossip and push-sum algorithms with Actor Model concurrency.</li>
+            <li>Simulated Grid and Full mesh topologies.</li>
+          </ul>
+          <a class="tile-link" href="https://github.com/shivamgupta-7/DOSP-Gossip-Algorithm" target="_blank" rel="noopener noreferrer">GitHub →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     PUBLICATIONS SECTION
+     Lists academic publications. Each publication is a collapsible
+     <details> card with the title as <summary>, plus metadata
+     (badge, organization, date), abstract info, and a link.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new publication, copy this block and place
+     it inside the <section id="publications"> after the <h2>.
+
 <details class="card project-card">
-
+  <summary>
+    Publication Title Here
+    <span class="expand-hint">Click to expand</span>
+  </summary>
+  <div class="pub-meta">
+    <div class="pub-badge">Research Publication</div>
+    <div class="pub-org">PUBLISHING ORGANIZATION</div>
+    <div class="pub-date">Month Day, Year</div>
+  </div>
+  <p><strong>Abstract Reference:</strong> Reference details here.</p>
+  <p><strong>Conference Details:</strong> Where and when it was presented.</p>
+  <p><strong>Organizing Body:</strong> Who organized the conference.</p>
+  <div class="project-links">
+    <a href="LINK_TO_PUBLICATION" target="_blank" rel="noopener noreferrer">View Publication</a>
+  </div>
+</details>
+-->
+<!-- PUBLICATIONS -->
+<section id="publications" class="reveal">
+  <h2>PUBLICATIONS</h2>
+  <details class="card project-card">
     <summary>
-        Privacy Preserving Autonomous Operations for Robot Operating System using Secure Multi-Party Computation
+      Development Of Comparison Tools in Determining Homology of Protein to Predict Antibody Neutralization Using Computational Techniques
       <span class="expand-hint">Click to expand</span>
     </summary>
-  
-    <ul>
-      <li>Developed algorithms and pipeline using Secure Multi-Party Computation (SMC) for Robot Operating System (ROS) to address security concerns due to vulnerabilities in communication channels and reduce overhead by 15%.</li>
-      <li>Deployed SMC that allows multiple parties to jointly compute over a function without revealing sensitive data, ensuring data remains encrypted throughout the entire process and increasing efficiency by 21%.</li>
-      <li>Tested in comparison to existing techniques like Data Distribution Service (DDS) and got 17% better efficiency.</li>
-    </ul>
-  
-  
-  </details>
-
-  
-    <!-- ================= U-NET ================= -->
-    <details class="card project-card">
-        <summary>
-            U-Net CNN and Sentinel-2 imagery for forest cover change prediction in the North-Western Himalayas
-          <span class="expand-hint">Click to expand</span>
-        </summary>
-    
-        <ul>
-          <li>Developed a forest cover change prediction system with an accuracy of 88%. Winner of SRM Project Expo 2022</li>
-          <li>Designed and implemented different ML strategies for forest cover change detection using remote sensing data and analyze its implications with research presentations</li>
-          <li>Analysed pattern and formulated an algorithm for a quick and efficient decision-making expert system</li>
-        </ul>
-    
-        <div class="project-links">
-          <a href="https://github.com/shivamgupta-7/Land-Cover-Detection" target="_blank">🔗 Project Link</a>
-        </div>
-      </details>
-
-          <!-- ================= TWITTER CLONE ================= -->
-    <details class="card project-card">
-        <summary>
-          Twitter Clone (Distributed Systems in Erlang)
-          <span class="expand-hint">Click to expand</span>
-        </summary>
-    
-        <ul>
-            <li>Project Objective: The aim was to implement a Twitter Clone and client tester/simulator using the Erlang programming language.</li>
-            <li>Twitter-Like Engine: The implementation included features such as user registration, sending tweets with hashtags and mentions, subscribing to users' tweets, re-tweets, and querying tweets based on subscriptions, hashtags, and mentions.</li>
-            <li>WebSocket Interface: The Cowboy web framework was used to create a WebSocket interface for real-time delivery of tweets. The design involved a JSON-based API, rewriting parts of the engine and client using WebSharper, and implementing public key-based authentication for secure communication.</li>
-            <li>Public Key Authentication: Users registered with a public key, and upon reconnecting via WebSockets, they authenticated using a challenge-based algorithm. The engine sent a challenge, the client signed it along with the current time, and the engine confirmed the authentication. Secret key establishment using Diffie-Helman protocol and HMAC signing of messages were also implemented for security.</li>
-        </ul>
-    
-        <div class="project-links">
-          <a href="https://github.com/shivamgupta-7/DOSP-Twitter-Clone" target="_blank">🔗 Project Link</a>
-        </div>
-      </details>
-
-      <!-- ================= STAY.IN ================= -->
-    <details class="card project-card">
-        <summary>
-          Sahayak Student Solutions (International Student Platform)
-          <span class="expand-hint">Click to expand</span>
-        </summary>
-    
-        <ul>
-          <li>Project Overview: Develop an app to assist international students in overcoming challenges related to accommodation, course information, and peer communication.</li>
-          <li>User Pain Points: 63% of international students struggle with finding suitable roommates and residences, indicating a prevalent issue.</li>
-          <li>User Interests: 80% of students express a keen interest in accessing information about available courses and interacting with fellow students.</li>
-          <li>Navigational Confusion: 83% of students lack clarity on essential aspects such as University ID, introductory events, and student club activities.</li>
-          <li>App Features: The proposed app aims to streamline the international student experience by offering features like apartment search, peer reviews, course information, and a social platform for easier interaction and enjoyment.</li>
-        </ul>
-
-        <div class="project-links">
-          <a href="https://github.com/shivamgupta-7/Sahayak-Student-" target="_blank">🔗 Project Link</a>
-        </div>
-      </details>
-    
-    
-      <!-- ================= SAHAYAK ================= -->
-      <details class="card project-card">
-        <summary>
-            Stay.in (Web + Mobile Student Platform) 
-          <span class="expand-hint">Click to expand</span>
-        </summary>
-    
-        <ul>
-          <li>Web and Android Applications for new students to find student-friendly accommodations and review courses and subject matter to make informed decisions during the course selection process in a project team of four </li>
-          <li>Web App (Stay. in) – Developed both frontend and backend features for sale, location services, and chat features using React and Golang with unit tests for all APIs</li>
-          <li>Android App – Developed both frontend and backend features using Flutter and Node.js</li>
-        </ul>
-
-    
-        <div class="project-links">
-          <a href="https://github.com/RajdevKapoor/Stay.in" target="_blank">🔗 Project Link</a>
-        </div>
-      </details>
-    
-    <!-- ================= FLOD ================= -->
-    <details class="card project-card">
-      <summary>
-        FLoD (First Line of Defence): Adversarial Robustness & Privacy Preservation in ML
-        <span class="expand-hint">Click to expand</span>
-      </summary>
-  
-      <ul>
-        <li>Developed a robust defense mechanism limiting membership inference and adversarial attacks without reducing model accuracy.</li>
-        <li>Trained across CIFAR-10, CIFAR-100, and Fashion MNIST for real-world adversarial resilience.</li>
-        <li>Improved ML security and reduced exposure of sensitive training data under attack scenarios.</li>
-      </ul>
-
-    </details>
-  
-   <!-- ================= BITCOIN MINER ================= -->
-   <details class="card project-card">
-    <summary>
-      Bitcoin Miner (Distributed Erlang System)
-      <span class="expand-hint">Click to expand</span>
-    </summary>
-
-    <ul>
-      <li>Built distributed Bitcoin mining system using Actor-based concurrency model.</li>
-      <li>Parallelized SHA-256 computation across multiple machines.</li>
-      <li>Successfully mined valid coins under leading-zero constraints.</li>
-    </ul>
-
+    <div class="pub-meta">
+      <div class="pub-badge">Research Publication</div>
+      <div class="pub-org">THE INDIAN SCIENCE CONGRESS ASSOCIATION</div>
+      <div class="pub-date">January 5, 2019</div>
+    </div>
+    <p>
+      <strong>Abstract Reference:</strong>
+      P-I.07 [Pg. 97] Section of New Biology in Proceedings of the 106th Indian Science Congress
+    </p>
+    <p>
+      <strong>Conference Details:</strong>
+      Presented at the 106th Indian Science Congress held at Lovely Professional University, Phagwara, Jalandhar, Punjab, India from January 3 to January 7, 2019.
+    </p>
+    <p>
+      <strong>Organizing Body:</strong>
+      The Indian Science Congress Association (Professional Body under Department of Science and Technology, Ministry of Science and Technology, Government of India)
+    </p>
     <div class="project-links">
-      <a href="https://github.com/shivamgupta-7/DOSP-Bitcoin-Miner" target="_blank">🔗 Project Link</a>
+      <a href="https://drive.google.com/file/d/1V_eiVMYSea_BxFH3VoLSF7fAP9pPGUrV/view?usp=sharing" target="_blank" rel="noopener noreferrer">View Publication</a>
     </div>
   </details>
 
-  
-  
-    <!-- ================= CHORD ================= -->
+  <details class="card project-card">
+    <summary>
+      Chatbot for Hotel Booking Websites
+      <span class="expand-hint">Click to expand</span>
+    </summary>
+    <div class="pub-meta">
+      <div class="pub-badge">Seminar Presentation</div>
+      <div class="pub-org">SRM IST Annual Journal 2020</div>
+      <div class="pub-date">December 6, 2020</div>
+    </div>
+    <p>
+      Explored AI-powered chatbot systems for hotel booking websites using bigram-based sentence similarity matching. The chatbot uses RDBMS for knowledge storage and pattern-matching via stored procedures, enabling automated customer interactions for tasks such as searching, booking, and form submission.
+    </p>
+  </details>
+</section>
+     
+<!-- TEMPLATE: To add a new achievement, copy this block and place
+     it inside <section id="achievements"> after the <h2>.
+
+<div class="card" style="margin-bottom:15px;">
+  <div class="edu-header">
+    <img class="edu-logo" src="assets/ORG_LOGO.jpeg" alt="Organization Name" loading="lazy">
+    <div>
+      <h3>Achievement Title</h3>
+      <span class="badge">Awarding Organization</span>
+      <p style="margin:6px 0 0;font-size:0.9rem;">Brief description of the achievement.</p>
+    </div>
+  </div>
+</div>
+-->
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="reveal">
+  <h2>ACHIEVEMENTS</h2>
+
+  <div class="card" style="margin-bottom:15px;">
+    <div class="edu-header">
+      <img class="edu-logo" src="assets/uf.jpeg" alt="University of Florida" loading="lazy">
+      <div>
+        <h3>Herbert Wertheim College of Engineering Achievement Award Scholarship</h3>
+        <span class="badge">University of Florida</span>
+        <p style="margin:6px 0 0;font-size:0.9rem;">Achievement Award Scholarship recipient at the Herbert Wertheim College of Engineering, University of Florida, Gainesville.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="edu-header">
+      <img class="edu-logo" src="assets/georgetown.jpeg" alt="Georgetown" loading="lazy">
+      <div>
+        <h3>Research Student Volunteer – Georgetown University</h3>
+        <span class="badge">Jan 2018 – Jun 2018</span>
+        <p style="margin:6px 0 0;font-size:0.9rem;">International Genetic Engineering Machine (iGEM) Initiative, Department of Biochemistry and Molecular & Cellular Biology, Georgetown University, Washington DC, USA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     STUDENT LEADERSHIP & VOLUNTEERING SECTION
+     Collapsible cards for each leadership role or volunteer
+     activity. Each uses <details> with a <summary> containing a
+     logo, title, and date hint. Older activities are nested inside
+     a "Show more" toggle.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new leadership/volunteering entry, copy
+     this block and place it inside <section id="activities">.
+
+<details class="card project-card">
+  <summary><img class="vol-logo" src="assets/ORG_LOGO.jpeg" alt="Org Name">Role Title - Organization<span class="expand-hint">Start Date – End Date</span></summary>
+  <ul>
+    <li>Description of contribution #1.</li>
+    <li>Description of contribution #2.</li>
+  </ul>
+</details>
+-->
+<!-- STUDENT LEADERSHIP & VOLUNTEERING -->
+<section id="activities" class="reveal">
+  <h2>STUDENT LEADERSHIP & VOLUNTEERING</h2>
+
+  <details class="card project-card">
+    <summary><img class="vol-logo" src="assets/srm_salesforce.jpeg" alt="Salesforce SRM">SRM Salesforce Student Group - Technical Team Lead<span class="expand-hint">Feb 2020 – Jul 2021</span></summary>
+    <ul>
+      <li>Led the technical team on several student-driven projects on the Salesforce Trailhead platform.</li>
+      <li>Organized workshops, guest lectures, and seminars for undergraduate students.</li>
+    </ul>
+  </details>
+
+  <details class="card project-card">
+    <summary><img class="vol-logo" src="assets/srm_hackerearth.jpeg" alt="HackerEarth SRM">SRM HackerEarth - Lead Associate<span class="expand-hint">Apr 2020 – Jan 2021</span></summary>
+    <ul>
+      <li>Organized HackChennai, one of the largest virtual hackathons with 1,900+ participants.</li>
+      <li>Organized Code-It-Up and Code Quest competitions at SRM Institute.</li>
+      <li>Recruitment Chair for undergraduate student clubs.</li>
+    </ul>
+  </details>
+
+  <details class="card project-card">
+    <summary><img class="vol-logo" src="assets/srm_acm.jpeg" alt="ACM SIGAI SRM">SRM ACM SIGAI(Student Interest Group - Artificial Intelligence) - Technical Lead<span class="expand-hint">Jun 2019 – Aug 2021</span></summary>
+    <ul>
+      <li>Worked on student-led research projects and cross-domain collaboration.</li>
+      <li>Organized workshops and seminars with industry experts at SRM Institute.</li>
+    </ul>
+  </details>
+
+  <details class="show-more-toggle" id="activities-more">
+    <summary class="show-more-btn" aria-label="Show more items">Show more ▾</summary>
+
     <details class="card project-card">
-      <summary>
-        Chord Peer-to-Peer System & Simulation
-        <span class="expand-hint">Click to expand</span>
-      </summary>
-  
+      <summary><img class="vol-logo" src="assets/nss.jpeg" alt="NSS">National Service Scheme (NSS) - Student Volunteer<span class="expand-hint">Jan 2019 – May 2019</span></summary>
       <ul>
-        <li>Implemented Chord DHT protocol for decentralized key-value routing.</li>
-        <li>Built node join and routing logic based on academic distributed systems paper.</li>
-        <li>Designed scalable key mapping and lookup system.</li>
+        <li>Organized drives and educational seminars on environment, health, and education for underprivileged students.</li>
+        <li>Organized a blood donation drive.</li>
       </ul>
-  
-      <div class="project-links">
-        <a href="https://github.com/shivamgupta-7/CHORD-P2P-SYSTEM-AND-SIMULATION" target="_blank">🔗 Project Link</a>
-      </div>
     </details>
-  
-  
-    <!-- ================= GOSSIP ================= -->
+
     <details class="card project-card">
-      <summary>
-        Gossip Algorithms in Distributed Systems
-        <span class="expand-hint">Click to expand</span>
-      </summary>
-  
+      <summary><img class="vol-logo" src="assets/tech_a_mania.jpeg" alt="Tech-A-Mania">Tech-A-Mania - Young Leadership Program<span class="expand-hint">Jul 2018 – Dec 2018</span></summary>
       <ul>
-        <li>Implemented gossip and push-sum algorithms using Actor Model concurrency.</li>
-        <li>Simulated multiple network topologies including Grid and Full mesh systems.</li>
-        <li>Analyzed convergence time and distributed system performance.</li>
+        <li>Mentorship program for young leaders organized by Nakul Mehrotra, Founder & CEO, Tech-A-Mania.</li>
       </ul>
-  
-      <div class="project-links">
-        <a href="https://github.com/shivamgupta-7/DOSP-Gossip-Algorithm" target="_blank">🔗 Project Link</a>
-      </div>
     </details>
-  
-  </section>
 
-  <!-- ================= PUBLICATIONS ================= -->
-<section id="publications" class="reveal">
-
-    <h2>PUBLICATIONS</h2>
-  
     <details class="card project-card">
-  
-      <summary>
-        Development Of Comparison Tools in Determining Homology of Protein to Predict Antibody Neutralization Using Computational Techniques
-        <span class="expand-hint">Click to expand</span>
-      </summary>
-  
-      <div class="pub-meta">
-        <div class="pub-badge">Research Publication</div>
-        <div class="pub-org">THE INDIAN SCIENCE CONGRESS ASSOCIATION</div>
-        <div class="pub-date">January 5, 2019</div>
-      </div>
-  
-      <p>
-        <strong>Abstract Reference:</strong>
-        P-I.07 [Pg. 97] Section of New Biology in Proceedings of the 106th Indian Science Congress
-      </p>
-  
-      <p>
-        <strong>Conference Details:</strong>
-        Presented at the 106th Indian Science Congress held at Lovely Professional University, Phagwara, Jalandhar, Punjab, India from January 3 to January 7, 2019.
-      </p>
-  
-      <p>
-        <strong>Organizing Body:</strong>
-        The Indian Science Congress Association (Professional Body under Department of Science and Technology, Ministry of Science and Technology, Government of India)
-      </p>
-  
-      <div class="project-links">
-        <a href="https://drive.google.com/file/d/1V_eiVMYSea_BxFH3VoLSF7fAP9pPGUrV/view?usp=sharing" target="_blank">📄 View Publication</a>
-      </div>
-  
+      <summary><img class="vol-logo" src="assets/indiansciencecongree.jpeg" alt="Indian Science Congress">102nd National Indian Science Congress - Research Scientist<span class="expand-hint">Jan 2015</span></summary>
+      <ul>
+        <li>Presented at the 102nd Indian Science Congress organized by the Department of Science and Technology, Government of India, hosted by University of Mumbai. Focal Theme: Science and Technology for Human Development.</li>
+      </ul>
     </details>
-  
-  </section>
 
+    <details class="card project-card">
+      <summary><img class="vol-logo" src="assets/nationalchildrensciencecongree.jpeg" alt="National Children Science Congress">22nd National Indian Children Science Congress - Student Volunteer<span class="expand-hint">Dec 2014</span></summary>
+      <ul>
+        <li>Participated at the National Children Science Congress organized by the Department of Science and Technology, Government of India, at Bengaluru. Focal Theme: Understanding Weather and Climate.</li>
+      </ul>
+    </details>
+
+  </details>
+</section>
+
+<!-- ============================================================
+     CERTIFICATIONS SECTION
+     A grid of certification cards. Featured certs appear first in
+     a .cert-grid. Additional certs are hidden behind a "Show more"
+     toggle. Each card has a title, issuer, date, credential ID,
+     and an optional link.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new certification card, copy this block
+     and place it inside a <div class="cert-grid">. Add the class
+     "featured" to highlight important certs.
+
+<div class="cert-card">
+  <h4>Certification Title</h4>
+  <div class="cert-meta"><span>Issuing Organization</span><span>Month Year</span></div>
+  <div class="cert-id">ID: YOUR_CREDENTIAL_ID</div>
+  <a class="cert-link" href="CREDENTIAL_URL" target="_blank" rel="noopener noreferrer">Show Credential</a>
+</div>
+-->
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="reveal">
+  <h2>CERTIFICATIONS</h2>
+  <div class="cert-grid">
+    <div class="cert-card featured">
+      <h4>Fundamentals of Red Hat Enterprise Linux</h4>
+      <div class="cert-meta"><span>Red Hat</span><span>Apr 2021</span></div>
+      <div class="cert-id">ID: CY6EVX5NATRE</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card featured">
+      <h4>NLP with Probabilistic Models</h4>
+      <div class="cert-meta"><span>DeepLearning.AI / Coursera</span><span>Mar 2021</span></div>
+      <div class="cert-id">ID: JCUW6EPZDQT3</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card featured">
+      <h4>NLP with Classification and Vector Spaces</h4>
+      <div class="cert-meta"><span>DeepLearning.AI / Coursera</span><span>Mar 2021</span></div>
+      <div class="cert-id">ID: P369P6UCYFME</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+  </div>
+  <details class="show-more-toggle" id="certs-more">
+    <summary class="show-more-btn" aria-label="Show more items">Show more ▾</summary>
+    <div class="cert-grid">
+    <div class="cert-card">
+      <h4>Game Theory</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Apr 2021</span></div>
+      <div class="cert-id">ID: SKJFNZGFNZW2</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Algorithms</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Aug 2020</span></div>
+      <div class="cert-id">ID: TYVLACG3SVKY</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Machine Learning with Python</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Jul 2020</span></div>
+      <div class="cert-id">ID: 3YW596DSRCVC</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Machine Learning</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Jun 2020</span></div>
+      <div class="cert-id">ID: 7WN36MXJGH5X</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Web Development</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Jul 2020</span></div>
+      <div class="cert-id">ID: N8ZTV9TAFF9H</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Tools for Data Science</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Jun 2020</span></div>
+      <div class="cert-id">ID: 624DXTB8NEX7</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Data Science</h4>
+      <div class="cert-meta"><span>Coursera</span><span>Oct 2019</span></div>
+      <div class="cert-id">ID: Z9X2A4RP3BP3</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Programming Using Python</h4>
+      <div class="cert-meta"><span>HackerRank</span><span>Jun 2020</span></div>
+      <div class="cert-id">ID: 2C661437053F</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Problem Solving</h4>
+      <div class="cert-meta"><span>HackerRank</span><span>Jun 2020</span></div>
+      <div class="cert-id">ID: B86860C14E2B</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Introduction to Programming Using Python</h4>
+      <div class="cert-meta"><span>NIELIT</span><span>Jun 2019</span></div>
+      <div class="cert-id">ID: NIELIT/SML/19/2019/4367</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Programming in C Certification</h4>
+      <div class="cert-meta"><span>SRM CARE</span><span>Jan 2019</span></div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    <div class="cert-card">
+      <h4>Programming Using C</h4>
+      <div class="cert-meta"><span>NIIT Limited</span><span>Aug 2018</span></div>
+      <div class="cert-id">ID: R190005700061</div>
+      <!-- <a class="cert-link" href="" target="_blank" rel="noopener noreferrer">Show Credential</a> -->
+    </div>
+    </div>
+  </details>
+</section>
+
+<!-- ============================================================
+     PERSONAL / BEYOND THE CODE SECTION
+     Shows personal interests and hobbies. Starts with a hero-style
+     intro (background image + text about hometown), followed by a
+     grid of interest tiles. Each tile has an image, emoji label,
+     and subtitle. The running tile has a special medal-tile variant
+     showing race medals.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new interest tile, copy this block and
+     place it inside <div class="interests-grid">.
+
+<div class="interest-tile">
+  <img src="assets/INTEREST_IMAGE.jpeg" alt="Interest Name" loading="lazy">
+  <div class="interest-label">🎯 Interest Name</div>
+  <div class="interest-sub">Short tagline</div>
+</div>
+-->
+<!-- TEMPLATE: To add a medal/achievement tile (like running), use:
+
+<div class="interest-tile medal-tile">
+  <img src="assets/ACTIVITY_IMAGE.jpeg" alt="Activity" loading="lazy">
+  <div class="interest-label">🏃 Activity Name</div>
+  <div class="medal-row">
+    <span class="medal">🥇 Achievement 1</span>
+    <span class="medal">🥇 Achievement 2</span>
+  </div>
+</div>
+-->
+<!-- PERSONAL -->
+<section id="personal" class="reveal">
+  <h2>BEYOND THE CODE</h2>
+  <div class="personal-intro">
+    <img src="assets/shimla.jpeg" alt="Shimla" class="personal-bg" loading="lazy">
+    <div class="personal-text">
+      <p>Originally from <strong>Shimla, Himachal Pradesh, India</strong> — a small hill town in the Himalayas. Now based in Seattle, I carry the mountains with me wherever I go.</p>
+    </div>
+  </div>
+  <div class="interests-grid">
+    <div class="interest-tile">
+      <img src="assets/guitar.jpeg" alt="Guitar" loading="lazy">
+      <div class="interest-label">🎸 Guitar</div>
+      <div class="interest-sub">Weekend strummer</div>
+    </div>
+    <div class="interest-tile">
+      <img src="assets/cricket.jpeg" alt="Cricket" loading="lazy">
+      <div class="interest-label">🏏 Cricket</div>
+      <div class="interest-sub">Always up for a match</div>
+    </div>
+    <div class="interest-tile">
+      <img src="assets/soccer.jpeg" alt="Soccer" loading="lazy">
+      <div class="interest-label">⚽ Soccer</div>
+      <div class="interest-sub">Sunday league regular</div>
+    </div>
+    <div class="interest-tile">
+      <img src="assets/hiking.jpeg" alt="Hiking" loading="lazy">
+      <div class="interest-label">🥾 Hiking</div>
+      <div class="interest-sub">PNW trails explorer</div>
+    </div>
+    <div class="interest-tile">
+      <img src="assets/driving.jpeg" alt="Driving" loading="lazy">
+      <div class="interest-label">🚗 Driving</div>
+      <div class="interest-sub">Open road, clear mind</div>
+    </div>
+    <div class="interest-tile medal-tile">
+      <img src="assets/running.jpeg" alt="Running" loading="lazy">
+      <div class="interest-label">🏃 Running</div>
+      <div class="medal-row">
+        <span class="medal">🥇 5K</span>
+        <span class="medal">🥇 10K</span>
+        <span class="medal">🥇 Half Marathon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / CTA SECTION
+     A call-to-action section with a heading, short message, and
+     buttons linking to email and LinkedIn. Uses .cta-btn for the
+     primary action and .cta-secondary for the alternate.
+     ============================================================ -->
+<!-- TEMPLATE: To add another contact button, copy this <a> tag
+     and place it inside <div class="cta-links">.
+
+<a href="https://YOUR_LINK" target="_blank" rel="noopener noreferrer" class="cta-btn cta-secondary">🔗 Link Label</a>
+-->
+<!-- CONTACT CTA -->
+<section id="contact" class="reveal cta-section">
+  <h2>LET'S CONNECT</h2>
+  <p class="cta-text">Interested in working together or just want to say hello? I'm always open to new opportunities and conversations.</p>
+  <div class="cta-links">
+    <a href="mailto:shivamguptasml@gmail.com" class="cta-btn">✉️ Email Me</a>
+    <a href="https://linkedin.com/in/shivam-gupta07" target="_blank" rel="noopener noreferrer" class="cta-btn cta-secondary">💼 LinkedIn</a>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     BACK TO TOP BUTTON
+     A floating button that scrolls the user back to the top of
+     the page. Visibility is toggled via JavaScript on scroll.
+     ============================================================ -->
+<button class="back-to-top-float" aria-label="Back to top">↑</button>
+
+<!-- ============================================================
+     FOOTER SECTION
+     Contains a divider, social/contact links, and a copyright
+     notice. Appears at the very bottom of the page.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new footer link, copy this <a> tag and
+     place it inside <div class="footer-links">.
+
+<a href="https://YOUR_LINK" target="_blank" rel="noopener noreferrer">Link Label</a>
+-->
 <footer>
-  <p>© 2026 Shivam Gupta</p>
+  <div class="section-divider"></div>
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/shivam-gupta07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/shivamgupta-7" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:shivamguptasml@gmail.com">Email</a>
+    </div>
+    <p>© 2026 Shivam Gupta</p>
+  </div>
 </footer>
 
 <script src="script.js"></script>
