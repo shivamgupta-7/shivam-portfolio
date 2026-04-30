@@ -133,20 +133,22 @@ const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector("nav ul");
 
 // Toggle the menu open/closed on hamburger click.
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("open");
-  // Swap the icon to give visual feedback.
-  hamburger.textContent = navMenu.classList.contains("open") ? "✕" : "☰";
-});
+if (hamburger && navMenu) {
+  hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    // Swap the icon to give visual feedback.
+    hamburger.textContent = navMenu.classList.contains("open") ? "✕" : "☰";
+  });
 
-// Close the menu automatically when any link inside it is clicked.
-// Uses event delegation on the <ul> so we don't need a listener per link.
-navMenu.addEventListener("click", (e) => {
-  if (e.target.tagName === "A") {
-    navMenu.classList.remove("open");
-    hamburger.textContent = "☰";
-  }
-});
+  // Close the menu automatically when any link inside it is clicked.
+  // Uses event delegation on the <ul> so we don't need a listener per link.
+  navMenu.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      navMenu.classList.remove("open");
+      hamburger.textContent = "☰";
+    }
+  });
+}
 
 /* ==========================================================================
    SMOOTH SCROLL
@@ -200,14 +202,14 @@ themeBtn.addEventListener("click", () => setTheme(!document.body.classList.conta
 if (localStorage.getItem("theme") === "light") setTheme(true);
 
 /* ==========================================================================
-   VOLUNTEERING HOVER-OPEN
+   VOLUNTEERING + SPEAKING HOVER-OPEN
    ---------------------------------------------------------------------------
-   In the #activities section, each volunteering card is a <details> element.
-   Instead of requiring a click, these open on mouse-enter and close on
-   mouse-leave, giving a hover-preview effect.
+   In the #activities and #speaking sections, each card is a <details>
+   element. Instead of requiring a click, these open on mouse-enter and
+   close on mouse-leave, giving a hover-preview effect.
    ========================================================================== */
 
-document.querySelectorAll("#activities details.card").forEach((d) => {
+document.querySelectorAll("#activities details.card, #speaking details.card").forEach((d) => {
   // Open the <details> when the cursor enters.
   d.addEventListener("mouseenter", () => d.open = true);
   // Close it when the cursor leaves.
@@ -289,6 +291,232 @@ function onScroll() {
 // Bind the master handler to scroll and load events.
 window.addEventListener("scroll", onScroll);
 window.addEventListener("load", onScroll);
+
+/* ==========================================================================
+   NETWORK BACKGROUND ANIMATION
+   ---------------------------------------------------------------------------
+   Renders an ambient "distributed systems" style node network onto a
+   full-viewport <canvas id="network-bg"> element behind all page content.
+   Nodes drift slowly; when two nodes come within LINK_DISTANCE of each
+   other, a faint line is drawn between them. The mouse gently repels
+   nearby nodes for a subtle interactive feel.
+
+   Implementation notes:
+   • DPR-aware — canvas is sized to devicePixelRatio so it stays crisp on
+     Retina displays without rendering at full-res on low-end devices.
+   • Theme-aware — colors are pulled from CSS variables so the network
+     automatically re-colors when dark/light mode toggles.
+   • Respects prefers-reduced-motion — renders a single static frame and
+     stops animating for users who've opted out of motion.
+   • Pauses when the tab is hidden (Page Visibility API) to save battery.
+   • Uses requestAnimationFrame for smooth 60fps rendering.
+   ========================================================================== */
+
+(() => {
+  const canvas = document.getElementById("network-bg");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d", { alpha: true });
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Tunable parameters — tweak these to change the density / vibe.
+  const LINK_DISTANCE = 140;   // Max px distance at which two nodes connect.
+  const MOUSE_RADIUS  = 120;   // Mouse influence radius for repulsion.
+  const BASE_DENSITY  = 14000; // Lower = more nodes. node count = area / BASE_DENSITY.
+  const MAX_NODES     = 90;    // Hard cap so huge screens don't get overwhelmed.
+  const MIN_NODES     = 30;    // Minimum on tiny screens.
+  const SPEED         = 0.25;  // Max drift velocity in px/frame.
+
+  let nodes = [];
+  let width = 0;
+  let height = 0;
+  let dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let mouseX = -9999;
+  let mouseY = -9999;
+  let rafId = null;
+  let colors = readThemeColors();
+
+  /**
+   * readThemeColors
+   * Pulls accent colors from the current CSS variables so the network
+   * automatically matches the active theme. Called on init and when the
+   * theme toggle fires.
+   */
+  function readThemeColors() {
+    const styles = getComputedStyle(document.body);
+    const accent = styles.getPropertyValue("--accent").trim() || "#60a5fa";
+    const accentLight = styles.getPropertyValue("--accent-light").trim() || "#93c5fd";
+    return { dot: accent, line: accentLight };
+  }
+
+  /**
+   * hexToRgb
+   * Tiny helper to convert a hex color to an "r, g, b" string for use
+   * inside rgba() — needed because we want variable alpha.
+   */
+  function hexToRgb(hex) {
+    const h = hex.replace("#", "");
+    const full = h.length === 3 ? h.split("").map(c => c + c).join("") : h;
+    const n = parseInt(full, 16);
+    return `${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}`;
+  }
+
+  /**
+   * resize
+   * Sizes the canvas to the viewport (accounting for devicePixelRatio
+   * so lines stay crisp) and regenerates the node set at a density
+   * appropriate for the new dimensions.
+   */
+  function resize() {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // Node count scales with viewport area, clamped to [MIN, MAX].
+    const target = Math.max(MIN_NODES, Math.min(MAX_NODES, Math.floor((width * height) / BASE_DENSITY)));
+    nodes = Array.from({ length: target }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * SPEED * 2,
+      vy: (Math.random() - 0.5) * SPEED * 2,
+      r: 1.2 + Math.random() * 1.3, // Radius varies slightly for visual depth.
+    }));
+  }
+
+  /**
+   * step
+   * Advances every node by its velocity, bounces off viewport edges,
+   * and applies mouse repulsion. Pure simulation — drawing is separate.
+   */
+  function step() {
+    for (const n of nodes) {
+      n.x += n.vx;
+      n.y += n.vy;
+
+      // Bounce off the viewport edges.
+      if (n.x < 0 || n.x > width)  n.vx *= -1;
+      if (n.y < 0 || n.y > height) n.vy *= -1;
+
+      // Mouse repulsion — nodes within MOUSE_RADIUS get pushed away.
+      const dx = n.x - mouseX;
+      const dy = n.y - mouseY;
+      const distSq = dx * dx + dy * dy;
+      if (distSq < MOUSE_RADIUS * MOUSE_RADIUS && distSq > 0) {
+        const dist = Math.sqrt(distSq);
+        const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS * 0.6;
+        n.x += (dx / dist) * force;
+        n.y += (dy / dist) * force;
+      }
+    }
+  }
+
+  /**
+   * draw
+   * Renders the current state: lines between nearby nodes (alpha
+   * fades with distance), then the nodes themselves on top.
+   */
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    const lineRgb = hexToRgb(colors.line);
+    const dotRgb  = hexToRgb(colors.dot);
+
+    // Lines first — so dots render on top and look cleaner.
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i];
+        const b = nodes[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const distSq = dx * dx + dy * dy;
+
+        if (distSq < LINK_DISTANCE * LINK_DISTANCE) {
+          const dist = Math.sqrt(distSq);
+          // Alpha fades linearly with distance (closer = more visible).
+          const alpha = (1 - dist / LINK_DISTANCE) * 0.35;
+          ctx.strokeStyle = `rgba(${lineRgb}, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Dots.
+    ctx.fillStyle = `rgba(${dotRgb}, 0.8)`;
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  /**
+   * loop
+   * The rAF animation loop. Simulates a step, draws the frame, queues
+   * the next. Stored in rafId so we can cancel it when the tab hides.
+   */
+  function loop() {
+    step();
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  /** Starts the loop if not already running. */
+  function start() {
+    if (rafId == null) rafId = requestAnimationFrame(loop);
+  }
+
+  /** Stops the loop (used when tab is hidden). */
+  function stop() {
+    if (rafId != null) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
+
+  // ── Event wiring ────────────────────────────────────────────────────────
+
+  // Track the mouse for repulsion. Reset when the cursor leaves the page.
+  window.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  window.addEventListener("mouseout", () => {
+    mouseX = -9999;
+    mouseY = -9999;
+  });
+
+  // Rebuild the canvas + node set when the viewport changes.
+  window.addEventListener("resize", resize);
+
+  // Pause rendering when the tab is hidden — big battery/CPU win on laptops.
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stop();
+    else if (!reduceMotion) start();
+  });
+
+  // Re-read theme colors whenever the theme toggle changes <body>'s class.
+  // MutationObserver fires on any class change — cheap and reliable.
+  new MutationObserver(() => { colors = readThemeColors(); })
+    .observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+  // ── Kickoff ─────────────────────────────────────────────────────────────
+
+  resize();
+  if (reduceMotion) {
+    // Users who opt out of motion get a single static frame — still
+    // shows the network, just doesn't animate.
+    draw();
+  } else {
+    start();
+  }
+})();
 
 /* ==========================================================================
    TEMPLATES  (commented-out reference snippets)

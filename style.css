@@ -83,6 +83,32 @@ body {
   transition: background 0.4s, color 0.4s;
 }
 
+/* ============================================================
+   NETWORK BACKGROUND CANVAS
+   ------------------------------------------------------------
+   Fixed full-viewport canvas sitting behind every content
+   layer. Drawn by JS (see network-bg logic in script.js).
+   pointer-events:none so it never blocks clicks.
+   The hero section's ::before gradient is made slightly
+   transparent elsewhere so the network shows through.
+============================================================ */
+
+#network-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+/* Ensure all page content sits above the canvas */
+nav, main, footer, .back-to-top-float {
+  position: relative;
+  z-index: 1;
+}
+
 /* Bold weight for all headings and <strong> tags */
 
 h1, h2, h3, h4, strong {
@@ -307,7 +333,7 @@ section[id] {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0b0f19 0%, #1e1b4b 30%, #172554 60%, #0b0f19 100%);
+  background: linear-gradient(135deg, rgba(11,15,25,0.55) 0%, rgba(30,27,75,0.55) 30%, rgba(23,37,84,0.55) 60%, rgba(11,15,25,0.55) 100%);
   background-size: 300% 300%;
   animation: heroGradient 12s ease infinite;
   z-index: 0;
@@ -317,7 +343,7 @@ section[id] {
    lighter blues and grays instead of the dark palette. */
 
 body.light .hero::before {
-  background: linear-gradient(135deg, #f1f5f9 0%, #dbeafe 30%, #e0e7ff 60%, #f1f5f9 100%);
+  background: linear-gradient(135deg, rgba(241,245,249,0.65) 0%, rgba(219,234,254,0.65) 30%, rgba(224,231,255,0.65) 60%, rgba(241,245,249,0.65) 100%);
   background-size: 300% 300%;
 }
 
@@ -1166,6 +1192,292 @@ details.timeline-card summary::-webkit-details-marker {
 }
 
 /* ============================================================
+   CONFERENCES & PUBLIC SPEAKING
+   ------------------------------------------------------------
+   Each talk is a collapsible <details class="project-card
+   talk-entry"> using the same pattern as Publications and
+   Leadership. The custom bits below style the summary row
+   (role badge, title, date hint) and the expanded body
+   (meta chips, bullets, topic tags, link).
+============================================================ */
+
+/* Summary row: three-part layout (role badge | title | date hint) */
+
+.talk-entry > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.talk-entry > summary::-webkit-details-marker { display: none; }
+
+/* Role badge — "Keynote Speaker", "Panelist", etc. */
+
+.talk-entry .talk-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(96,165,250,0.18), rgba(167,139,250,0.18));
+  border: 1px solid var(--border-accent);
+  color: var(--accent-light);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Conference title inside the summary */
+
+.talk-entry .talk-title-text {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--text);
+  min-width: 200px;
+}
+
+/* The expanded body */
+
+.talk-entry .talk-body {
+  padding-top: 16px;
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.35s ease;
+}
+
+/* Meta chips row (location, organizer) */
+
+.talk-entry .talk-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.talk-entry .talk-meta span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Bullet text inside talk body — match description weight */
+.talk-entry .talk-body ul {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* Topic tags — match project tech-stack style */
+
+.talk-entry .talk-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.talk-entry .talk-tags span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: rgba(96, 165, 250, 0.12);
+  border: 1px solid var(--border-accent);
+  color: var(--accent-light);
+}
+
+/* Links row — Conference Website / Proof of Invitation */
+
+.talk-entry .talk-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--border);
+}
+
+.talk-entry .talk-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  text-decoration: none;
+  padding: 5px 11px;
+  border-radius: 8px;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid var(--border-accent);
+  transition: background 0.2s, transform 0.2s, color 0.2s;
+}
+
+.talk-entry .talk-links a:hover {
+  background: rgba(96, 165, 250, 0.18);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Mobile tweaks: stack the summary row nicely */
+
+@media (max-width: 768px) {
+  .talk-entry > summary {
+    gap: 8px;
+  }
+  .talk-entry .talk-title-text {
+    font-size: 0.92rem;
+    min-width: 0;
+    flex-basis: 100%;
+    order: 2;
+  }
+  .talk-entry .talk-role { order: 1; }
+  .talk-entry > summary .expand-hint { order: 3; }
+}
+
+/* ============================================================
+   TRADE ARTICLES
+   ------------------------------------------------------------
+   Industry / trade publication cards. Same collapsible
+   <details> pattern as Speaking, but with a subtle purple
+   accent on the badge to visually differentiate from the
+   blue-accented Publications/Speaking sections above it.
+============================================================ */
+
+.trade-entry > summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.trade-entry > summary::-webkit-details-marker { display: none; }
+
+/* Badge — purple tint to distinguish from other sections */
+
+.trade-entry .trade-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(167,139,250,0.22), rgba(96,165,250,0.18));
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  color: #c4b5fd;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+body.light .trade-entry .trade-badge {
+  background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(59,130,246,0.12));
+  border-color: rgba(124, 58, 237, 0.4);
+  color: #6d28d9;
+}
+
+/* Article title in the summary row */
+
+.trade-entry .trade-title-text {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--text);
+  min-width: 200px;
+}
+
+/* Expanded body — spacing + top divider to match Speaking */
+
+.trade-entry .trade-body {
+  padding-top: 16px;
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  animation: fadeIn 0.35s ease;
+}
+
+/* Meta chips row (venue, author) */
+
+.trade-entry .trade-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.trade-entry .trade-meta span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* Description paragraph */
+
+.trade-entry .trade-body p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+/* Topic tags — same pill style as project tech-stack */
+
+.trade-entry .trade-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.trade-entry .trade-tags span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 5px;
+  background: rgba(167, 139, 250, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #c4b5fd;
+}
+
+body.light .trade-entry .trade-tags span {
+  background: rgba(124, 58, 237, 0.1);
+  border-color: rgba(124, 58, 237, 0.35);
+  color: #6d28d9;
+}
+
+/* Mobile: stack the summary row like Speaking does */
+
+@media (max-width: 768px) {
+  .trade-entry > summary {
+    gap: 8px;
+  }
+  .trade-entry .trade-title-text {
+    font-size: 0.92rem;
+    min-width: 0;
+    flex-basis: 100%;
+    order: 2;
+  }
+  .trade-entry .trade-badge { order: 1; }
+  .trade-entry > summary .expand-hint { order: 3; }
+}
+
+/* ============================================================
    SHOW MORE TOGGLE
    ------------------------------------------------------------
    A <details> element styled as a "Show More ▾" button.
@@ -1935,6 +2247,11 @@ footer {
     color: #000;
   }
 
+  /* Hide the network background canvas when printing */
+  #network-bg {
+    display: none !important;
+  }
+
   /* Hide non-printable interactive elements */
   nav, .hamburger, .theme-toggle, .scroll-hint,
   .back-to-top-float, .show-more-toggle,
@@ -2007,7 +2324,7 @@ body.light .personal-bg {
    override — also set in the hero section above) */
 
 body.light .hero::before {
-  background: linear-gradient(135deg, #f1f5f9 0%, #dbeafe 30%, #e0e7ff 60%, #f1f5f9 100%);
+  background: linear-gradient(135deg, rgba(241,245,249,0.65) 0%, rgba(219,234,254,0.65) 30%, rgba(224,231,255,0.65) 60%, rgba(241,245,249,0.65) 100%);
   background-size: 300% 300%;
 }
 

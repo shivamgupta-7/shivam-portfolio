@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Shivam Gupta - Software Development Engineer at AWS. Portfolio and resume.">
   <meta property="og:title" content="Shivam Gupta - Software Development Engineer at AWS">
-  <meta property="og:description" content="Portfolio of Shivam Gupta — SDE at Amazon Web Services. Distributed systems, cloud-native apps, and AI-driven platforms.">
+  <meta property="og:description" content="Portfolio of Shivam Gupta, SDE at Amazon Web Services. Distributed systems, cloud-native apps, and AI-driven platforms.">
   <meta property="og:image" content="assets/profile.jpeg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -24,6 +24,15 @@
   <link rel="preload" href="assets/profile.jpeg" as="image">
 </head>
 <body>
+
+<!-- ============================================================
+     NETWORK BACKGROUND CANVAS
+     An ambient canvas that renders a "distributed systems"
+     style node network — floating dots connected by faint
+     lines when they drift close together. Lives behind all
+     content. See script.js for the animation logic.
+     ============================================================ -->
+<canvas id="network-bg" aria-hidden="true"></canvas>
 
 <!-- ============================================================
      NAVIGATION BAR
@@ -43,6 +52,7 @@
     <li class="nav-more">
       <span class="more-dots">More ▾</span>
       <ul class="nav-dropdown">
+        <li><a href="#speaking">Speaking</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#activities">Leadership</a></li>
@@ -109,7 +119,7 @@
           GitHub
         </a>
         |
-        <a class="icon-link" href="https://drive.google.com/file/d/1bd6R-mMe_f5_ZoEWve8fnyRqufx1d2HV/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a class="icon-link" href="https://drive.google.com/file/d/1NIoZTFPyq8tovRvXRbF49jIzms_spGlc/view?usp=sharing" target="_blank" rel="noopener noreferrer">
           📄 1-Page Resume
         </a>
       </p>
@@ -141,13 +151,7 @@
   <h2>ABOUT ME</h2>
   <div class="card">
     <p>
-      I build systems that scale. From designing GA features at AWS to deploying AI pipelines
-      in healthcare, I'm drawn to problems where distributed systems meet real-world impact.
-    </p>
-    <p>
-      My work spans cloud infrastructure, backend architecture, and applied machine learning
-      across healthcare and finance. I care about clean design, operational excellence,
-      and shipping code that matters.
+      Software engineer building <strong>scalable systems</strong> where <strong>backend</strong> architecture meets <strong>Gen AI</strong>. At AWS, I design distributed features for cloud data protection; previously, I shipped Gen AI pipelines across healthcare and fault-tolerant platforms in finance. I care about clean design, operational excellence, and code that holds up under production load. I gravitate toward the hard problems at the intersection of <strong>distributed systems</strong>, <strong>large-scale data</strong>, and applied intelligence where a good abstraction can outlive its authors. Outside of work, I'm a lifelong learner who believes the best engineering comes from curiosity, craft, and an obsession with the details that users never see.
     </p>
   </div>
 </section>
@@ -220,9 +224,9 @@
         <div class="exp-section">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Designed and implemented a GA feature for AWS Backup and S3 data protection, enabling optional backup of access control lists and object tags, reducing customer costs by 10%.</li>
-            <li>Led end-to-end system design and implementation of a cross-region, customer-facing error classification system for S3 backup and restore failures, enabling self-service remediation and reducing operational support load.</li>
-            <li>Developed a scalable EC2 fleet management onboarding system supporting automated OS patching, instance right-sizing, and compliance enforcement across a globally distributed, high-availability infrastructure.</li>
+            <li>Designed and implemented a <strong>large-scale distributed feature</strong> for <strong>AWS Backup and S3 data protection</strong>, improving system reliability and reducing customer costs by <strong>10%</strong> across high-availability cloud infrastructure.</li>
+            <li>Led end-to-end <strong>system design of a cross-region distributed error classification system</strong> for S3, improving debugging and observability, reducing operational support load by <strong>25%</strong>, and enabling faster remediation of production issues.</li>
+            <li>Developed a scalable distributed <strong>EC2 fleet management system</strong> enabling automated patching and compliance across infrastructure, improving resource efficiency by <strong>18%</strong> and supporting high-throughput, low-latency workloads.</li>
           </ul>
         </div>
       </div>
@@ -249,9 +253,9 @@
         <div class="exp-body">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Deployed a distributed, cloud-native multi-tier application architecture on OpenStack using Ansible automation and Maven-based CI/CD pipelines, improving deployment scalability and delivery efficiency by 20%.</li>
-            <li>Designed enterprise batch scheduling workflows using Autosys (JIL), optimizing job orchestration and reducing execution latency by 15% in production systems.</li>
-            <li>Developed a scalable distributed multi-user backend platform using Erlang and MySQL, implementing concurrent service orchestration for enterprise-grade multi-user applications.</li>
+            <li>Deployed <strong>distributed cloud-native infrastructure</strong> using <strong>OpenStack and Ansible</strong> with CI/CD pipelines, improving deployment scalability and reliability by <strong>20%</strong> in large-scale production environments.</li>
+            <li>Designed distributed job orchestration workflows using <strong>Autosys for LLM training, fine-tuning, and inference</strong>, reducing execution latency by <strong>15%</strong> and improving performance for high-throughput workloads.</li>
+            <li>Developed scalable and reliable distributed computing systems using <strong>Erlang and MySQL</strong>, improving concurrency handling by <strong>30%</strong> and enabling fault-tolerant multi-user applications.</li>
           </ul>
         </div>
       </details>
@@ -278,9 +282,9 @@
         <div class="exp-body">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Designed a graph-based data processing system using MemGraph for healthcare analytics, enabling efficient querying and visualization of large-scale relational datasets and improving system performance by 56%.</li>
-            <li>Built and deployed secure, cloud-integrated AI systems for healthcare (PHI-compliant) on GPU-accelerated infrastructure, supporting production-level machine learning workflows and improving operational efficiency by 38%.</li>
-            <li>Developed a distributed backend application using object-oriented programming, integrating MS-SQL Server, XML, and networking protocols, improving user engagement by 18%.</li>
+            <li>Designed a <strong>graph-based ML and Gen AI system</strong> using <strong>MemGraph</strong> for healthcare analytics, enabling efficient querying and visualization of large-scale relational datasets and improving system performance by <strong>56%</strong>.</li>
+            <li>Built and deployed secure, cloud-integrated <strong>AI systems for healthcare (PHI-compliant)</strong> on GPU-accelerated infrastructure, supporting production-level machine learning workflows and improving operational efficiency by <strong>38%</strong>.</li>
+            <li>Developed a distributed backend application using object-oriented programming, integrating <strong>Go (Golang), MS-SQL Server, XML</strong>, and networking protocols, improving user engagement and scalability by <strong>18%</strong>.</li>
           </ul>
         </div>
       </details>
@@ -310,18 +314,18 @@
         <div class="exp-body">
           <h4>Software Engineer Intern <span class="badge">May 2023 – Jun 2023</span></h4>
           <ul>
-            <li>Summer Intern (Student Assistant) at the Office of AI Application and Innovation. Developed an operational graphical model using MemGraph to sort through subgraphs with a filtered approach to graph AI for complex patient data.</li>
-            <li>The AI Labs for Patient Safety link PHI to GPU-accelerated, high-performance computing infrastructure within a secure enclave, extending research-level AI models to operational datasets.</li>
+            <li>Summer Intern (Student Assistant) at the <strong>Office of AI Application and Innovation</strong>. Developed an operational graphical model using <strong>MemGraph</strong> to sort through subgraphs with a filtered approach to graph AI for complex patient data.</li>
+            <li>The <strong>AI Labs for Patient Safety</strong> link PHI to <strong>GPU-accelerated, high-performance computing infrastructure</strong> within a secure enclave, extending research-level AI models to operational datasets.</li>
           </ul>
           <h4>Graduate Research Assistant <span class="badge">Feb 2023 – Jun 2023</span></h4>
           <ul>
-            <li>Graduate Research Assistant at Magnetoencephalography (MEG) Lab, The Norman Fixel Institute of Neurological Diseases at UF Health with Abbas Babajani-Feremi, PhD.</li>
-            <li>Research and analysis on complex NACC health data for the Alzheimer's dataset with data from over 15,000 patients collected over 25 years to identify complex patterns using different machine learning models.</li>
+            <li>Graduate Research Assistant at <strong>Magnetoencephalography (MEG) Lab</strong>, The Norman Fixel Institute of Neurological Diseases at UF Health with Abbas Babajani-Feremi, PhD.</li>
+            <li>Research and analysis on complex NACC health data for the <strong>Alzheimer's dataset</strong> with data from over <strong>15,000 patients</strong> collected over <strong>25 years</strong> to identify complex patterns using different machine learning models.</li>
           </ul>
           <h4>Graduate Teaching Assistant <span class="badge">Jan 2023 – May 2023</span></h4>
           <ul>
-            <li>Graduate Teaching Assistant for the Human-Computer Interaction Course with Pedro Guillermo Feijóo-García, Ph.D. at the Department of Computer and Information Science, Herbert Wertheim College of Engineering.</li>
-            <li>Mentored 120 students through the complexities of Human-Computer Interaction and User Experience Design along with grading assignments and projects.</li>
+            <li>Graduate Teaching Assistant for the <strong>Human-Computer Interaction</strong> Course with Pedro Guillermo Feijóo-García, Ph.D. at the Department of Computer and Information Science, Herbert Wertheim College of Engineering.</li>
+            <li>Mentored <strong>120 students</strong> through the complexities of Human-Computer Interaction and User Experience Design along with grading assignments and projects.</li>
           </ul>
         </div>
       </details>
@@ -348,8 +352,8 @@
         <div class="exp-body">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Built REST APIs using Java & Spring Boot with Mockito testing, improving API performance by 20%.</li>
-            <li>Enhanced distributed system observability using OpenTelemetry, Prometheus, and Micrometer, improving latency tracking and reducing response time by 23%.</li>
+            <li>Built <strong>RESTful microservices</strong> using <strong>Java and Spring Boot</strong> with Mockito testing, improving API performance by <strong>20%</strong>.</li>
+            <li>Enhanced distributed systems observability, monitoring, and debugging using <strong>OpenTelemetry, Prometheus, and Micrometer</strong>, improving latency tracking and reducing response time by <strong>23%</strong>.</li>
           </ul>
         </div>
       </details>
@@ -376,8 +380,8 @@
         <div class="exp-body">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Modernized a COVID-19 web application using .NET, Azure, and JavaScript, reducing debugging time by 23%.</li>
-            <li>Designed a U-Convolutional Neural Network for change prediction, achieving 97% accuracy on remote sensing data.</li>
+            <li>Modernized a <strong>COVID-19 web application</strong> using <strong>.NET, Azure, and JavaScript</strong>, reducing debugging time by <strong>23%</strong>.</li>
+            <li>Designed a <strong>U-Convolutional Neural Network</strong> for change prediction, achieving <strong>97% accuracy</strong> on remote sensing data.</li>
           </ul>
         </div>
       </details>
@@ -404,8 +408,8 @@
         <div class="exp-body">
           <h4>Key Contributions</h4>
           <ul>
-            <li>Built a real-time facial recognition system using Python, OpenCV, and NumPy, enabling efficient feature extraction and identity matching (82% accuracy).</li>
-            <li>Integrated a chatbot with natural language processing for user support, boosting user experience by 24%.</li>
+            <li>Built a <strong>real-time machine learning system</strong> using <strong>Python, OpenCV, and NumPy</strong>, improving feature extraction efficiency by <strong>22%</strong> and achieving <strong>82% accuracy</strong>, with exposure to <strong>LLM-based approaches for multimodal AI systems</strong>.</li>
+            <li>Integrated a chatbot with <strong>natural language processing (NLP)</strong> for consumer support to boost user experience by <strong>24%</strong>.</li>
           </ul>
         </div>
       </details>
@@ -660,6 +664,88 @@
   </div>
 </div>
 -->
+
+<!-- ============================================================
+     CONFERENCES & PUBLIC SPEAKING SECTION
+     Collapsible cards for keynote talks, invited sessions,
+     panels, and workshops. Uses the same <details> + <summary>
+     pattern as Publications and Leadership so each talk expands
+     to reveal a single bullet of detail. Placed above Projects
+     so credibility signals appear early in the scroll order.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new speaking engagement, copy the block
+     below and place it inside <section id="speaking"> after the
+     <h2>. The ROLE badge text (Keynote / Invited Talk / Panelist
+     / Workshop) shows up on the left of the summary row.
+
+     The block includes BOTH a "Conference Website" link AND a
+     "Proof of Invitation / Recording" link. Use whichever you
+     have available — delete the line for the one you don't.
+
+     Cards auto-open on hover (see script.js #speaking handler),
+     matching the Leadership section's behavior.
+
+<details class="card project-card talk-entry">
+  <summary>
+    <span class="talk-role">🎤 Keynote Speaker</span>
+    <span class="talk-title-text">
+      Full Conference Name (SHORT_NAME YYYY)
+    </span>
+    <span class="expand-hint">Month DD, YYYY</span>
+  </summary>
+  <div class="talk-body">
+    <div class="talk-meta">
+      <span>📍 City, Country / Virtual</span>
+      <span>🏛️ Hosting Institution</span>
+    </div>
+    <ul>
+      <li>One-sentence description of the talk, the audience, and the key takeaway.</li>
+    </ul>
+    <div class="talk-tags">
+      <span>Topic 1</span><span>Topic 2</span>
+    </div>
+    <div class="talk-links">
+      <a href="CONFERENCE_URL" target="_blank" rel="noopener noreferrer">🌐 Conference Website</a>
+      <a href="PROOF_URL" target="_blank" rel="noopener noreferrer">📎 Proof of Invitation</a>
+    </div>
+  </div>
+</details>
+-->
+<!-- CONFERENCES & PUBLIC SPEAKING -->
+<section id="speaking" class="reveal">
+  <h2>CONFERENCES &amp; PUBLIC SPEAKING</h2>
+
+  <details class="card project-card talk-entry">
+    <summary>
+      <span class="talk-role">🎤 Keynote Speaker</span>
+      <span class="talk-title-text">
+        International Conference on AI-Driven Multidisciplinary Innovations &amp; Sustainability (ICAIMIS 2026)
+      </span>
+      <span class="expand-hint">May 2–3, 2026</span>
+    </summary>
+    <div class="talk-body">
+      <div class="talk-meta">
+      </div>
+      <ul>
+        <li>Invited as a keynote speaker at a global research convergence platform bringing together academicians, researchers, and industry professionals from Romania, Oman, and India, speaking on scalable distributed systems, Gen AI, and the intersection of cloud infrastructure with sustainable technology. Selected proceedings published by Bentham Science Publishers (Singapore) and submitted for Scopus indexing.</li>
+      </ul>
+      <div class="talk-tags">
+        <span>Theme: AI &amp; Machine Learning</span>
+        <span>Distributed Systems</span>
+        <span>Gen AI</span>
+        <span>Cloud &amp; Data Science</span>
+      </div>
+      <div class="talk-links">
+        <a href="https://icaimis.com/" target="_blank" rel="noopener noreferrer">🌐 Conference Website</a>
+        <!-- Replace href="#" with the actual proof URL (invitation email PDF, conference listing, LinkedIn post, etc.) when available:
+        <a href="#" target="_blank" rel="noopener noreferrer">📎 Proof of Invitation</a>
+        -->
+      </div>
+    </div>
+  </details>
+
+</section>
+
 <section id="projects" class="reveal">
   <h2>PROJECTS</h2>
   <div class="project-grid">
@@ -668,12 +754,12 @@
       <img src="assets/privacypreserving.jpeg" alt="Privacy Preserving ROS" loading="lazy">
       <div class="tile-overlay">
         <h4>Privacy Preserving Autonomous Operations for ROS</h4>
-        <div class="tech-stack"><span>Python</span><span>ROS</span><span>SMC</span></div>
+        <div class="tech-stack"><span>C</span><span>Linux</span><span>SMC</span><span>ROS</span></div>
         <div class="tile-details">
           <ul>
-            <li>Developed SMC pipeline for ROS, reducing overhead by 15%.</li>
-            <li>Encrypted multi-party computation increasing efficiency by 21%.</li>
-            <li>17% better efficiency vs Data Distribution Service (DDS).</li>
+            <li>Developed algorithms and pipeline using Secure Multi-Party Computation (SMC) for Robot Operating System (ROS) to address security concerns due to vulnerabilities in communication channels and reduce overhead by 15%.</li>
+            <li>Deployed SMC that allows multiple parties to jointly compute over a function without revealing sensitive data, ensuring data remains encrypted throughout the entire process and increasing efficiency by 21%.</li>
+            <li>Tested in comparison to existing techniques like Data Distribution Service (DDS) and got 17% better efficiency.</li>
           </ul>
         </div>
       </div>
@@ -873,6 +959,89 @@
     </p>
   </details>
 </section>
+
+<!-- ============================================================
+     TRADE ARTICLES SECTION
+     Industry and trade publication write-ups, technical deep
+     dives, and bylined articles authored for or about industry
+     audiences (distinct from peer-reviewed research in the
+     Publications section above). Uses the same collapsible
+     <details> card pattern as Publications for consistency.
+     ============================================================ -->
+<!-- TEMPLATE: To add a new trade article, copy the block below
+     and place it inside <section id="trade-articles"> after
+     the <h2>. Fill in the venue, date, topic tags, and either
+     the article URL or a commented-out placeholder if the
+     article isn't published yet.
+
+<details class="card project-card trade-entry">
+  <summary>
+    <span class="trade-badge">📰 Trade Article</span>
+    <span class="trade-title-text">
+      Article Title Goes Here
+    </span>
+    <span class="expand-hint">Month YYYY</span>
+  </summary>
+  <div class="trade-body">
+    <div class="trade-meta">
+      <span>📖 Publishing Venue / Journal</span>
+      <span>✍️ Author / Co-author</span>
+    </div>
+    <p>
+      One to two sentences describing the article's thesis, the
+      audience it targets, and the key insight it delivers.
+    </p>
+    <div class="trade-tags">
+      <span>Topic 1</span><span>Topic 2</span>
+    </div>
+    <div class="talk-links">
+      <a href="ARTICLE_URL" target="_blank" rel="noopener noreferrer">🌐 Read Article</a>
+      <a href="PROOF_URL" target="_blank" rel="noopener noreferrer">📎 Archive / PDF</a>
+    </div>
+  </div>
+</details>
+-->
+<!-- TRADE ARTICLES (commented out until the first article is published.
+     When ready: remove this opening marker and the closing marker below,
+     then fill in the title, date, venue, description, tags, and URLs.
+     Also re-add <li><a href="#trade-articles">Trade Articles</a></li>
+     to the nav .nav-dropdown block at the top of this file.) -->
+<!--
+<section id="trade-articles" class="reveal">
+  <h2>TRADE ARTICLES</h2>
+
+  <details class="card project-card trade-entry">
+    <summary>
+      <span class="trade-badge">📰 Trade Article</span>
+      <span class="trade-title-text">
+        Scalable Cross-Region Disaster Recovery Efforts
+      </span>
+      <span class="expand-hint">Coming Soon</span>
+    </summary>
+    <div class="trade-body">
+      <div class="trade-meta">
+        <span>📖 Publishing Venue TBD</span>
+        <span>✍️ Shivam Gupta</span>
+      </div>
+      <p>
+        A deep dive into designing and operating scalable cross-region disaster recovery for cloud-scale data protection services. Covers backup replication topologies, failover orchestration, consistency guarantees across regions, and the operational playbooks that turn theoretical durability into production reliability.
+      </p>
+      <div class="trade-tags">
+        <span>Disaster Recovery</span>
+        <span>Cross-Region</span>
+        <span>Distributed Systems</span>
+        <span>Cloud Infrastructure</span>
+      </div>
+      <div class="talk-links">
+        <a href="#" target="_blank" rel="noopener noreferrer">🌐 Read Article</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">📎 Archive / PDF</a>
+      </div>
+    </div>
+  </details>
+
+</section>
+-->
+
      
 <!-- TEMPLATE: To add a new achievement, copy this block and place
      it inside <section id="achievements"> after the <h2>.
@@ -1150,7 +1319,7 @@
   <div class="personal-intro">
     <img src="assets/shimla.jpeg" alt="Shimla" class="personal-bg" loading="lazy">
     <div class="personal-text">
-      <p>Originally from <strong>Shimla, Himachal Pradesh, India</strong> — a small hill town in the Himalayas. Now based in Seattle, I carry the mountains with me wherever I go.</p>
+      <p>Originally from <strong>Shimla, Himachal Pradesh, India</strong>, a small hill town in the Himalayas. Now based in Seattle, I carry the mountains with me wherever I go.</p>
     </div>
   </div>
   <div class="interests-grid">
